@@ -1,0 +1,15 @@
+#!/bin/bash
+
+export LC_ALL=C
+
+
+
+DATA=$(date +%a)
+
+echo $DATA
+
+if [$DATA -eq 1]; then
+    echo "weekend"
+else
+    echo "dzien roboczy"
+fi

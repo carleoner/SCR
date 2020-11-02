@@ -1,0 +1,9 @@
+#!/bin/bash
+
+#rozszerz
+#liczba dni
+#nazwa archiwum
+
+
+find . -name *.$1 -mtime -$2 -exec ls -l {} +
+#tar -rvf $2.tar {} +
