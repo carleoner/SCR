@@ -1,0 +1,11 @@
+
+poleceniem mknod (tworzy pliki specjalne: blokowe lub znakowe)
+z dodaniem p, tworze potok nazwany - FIFO
+
+mknod fifo p
+
+w co najmniej czterech terminalach wywoluje rownoczesnie pisanie do i roznoczesne czytanie z tego potoku przez wiele procesow
+
+$ cat > fifo
+
+po wykonaniu polecen zauwazylem ze system zdaje sie rozdzielac dane w sposob losowy

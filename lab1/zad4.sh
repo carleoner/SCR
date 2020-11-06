@@ -1,12 +1,14 @@
 #!/bin/bash
 
 
-while getopts "n:m:a:" OPTION
+while getopts ":n:m:a:" OPTION
 do
     case $OPTION in
 	n) LICZBA=$OPTARG;;
 	m) ROZSZERZENIE=$OPTARG;;
 	a) NAZWA=$OPTARG;;
+	:) echo "Invalid operation: -$OPTARG needed arg"
+	   exit;;
 	*) echo "Invalid option";;
     esac
 done

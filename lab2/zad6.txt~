@@ -1,0 +1,6 @@
+
+sygnal SIGSTOP daje taki sam efekt jak nacisniecie ^Z (ctrl + z)
+
+$ kill -19 PID
+za pomoca tego polecenia bylem w stanie zawiesic dzialanie programu
+
