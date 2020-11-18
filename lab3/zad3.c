@@ -21,3 +21,4 @@ jakub@jakub-VirtualBox:/proc/4973$ cat mountinfo
 
 //poleceniem cat moglem wyswietlisc zawartosc pliku
 
+//na przyklad w pliku status jest informacja o statusie procesu
