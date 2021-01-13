@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <pthread.h>
+ 
+void * printThread(void * ID){
+  unsigned long int k = (unsigned long int) ID;
+  printf("Hello SCR. Written by thread ID: %ld\n", k);
+  //zakonczenie aktialnego watku
+  pthread_exit(NULL);		    
+}
+ 
+int main()
+{
+  unsigned long int i;
+  int blad, a = 4;
+  //tablica wskaznikow do watku  
+  pthread_t watki[a];
+  for(i=0; i<a; i++){
+    //wskaznik do watku, parametry watku->NULL,
+    //wskaźnik na funkcję wykonywaną przez wątek, funkcja ta musi przyjmować 1 argument typu void *
+    //, argument przekazywany funkcji start_routine
+    blad = pthread_create(&watki[i], NULL, printThread,(void *) i);
+    //zwraca 0 gdzy działa poprwanie
+    if (blad) {
+      fprintf(stderr, "Blad przy twozreniu watku");
+    }
+  }
+  //zakonczenie aktualnego watku
+  pthread_exit(NULL);
+  return 0;
+}
+
+//program wypisuje wątki w nie w kolejnośći, inaczej za każdym razem
